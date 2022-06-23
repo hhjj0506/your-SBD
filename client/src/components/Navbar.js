@@ -34,6 +34,9 @@ const Navbar = () => {
                         <a href="/" className="navbar-item">
                             Home
                         </a>
+                        <a href="/profile" className="navbar-item">
+                            Profile
+                        </a>
                     </div>
  
                     <div className="navbar-end">

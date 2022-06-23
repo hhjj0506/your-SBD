@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
  
 const Dashboard = () => {
     const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
     const [users, setUsers] = useState([]);
@@ -22,6 +23,7 @@ const Dashboard = () => {
             setToken(response.data.accessToken);
             const decoded = jwt_decode(response.data.accessToken);
             setName(decoded.name);
+            setEmail(decoded.email);
             setExpire(decoded.exp);
         } catch (error) {
             if (error.response) {
@@ -40,6 +42,7 @@ const Dashboard = () => {
             setToken(response.data.accessToken);
             const decoded = jwt_decode(response.data.accessToken);
             setName(decoded.name);
+            setEmail(decoded.email);
             setExpire(decoded.exp);
         }
         return config;
@@ -58,7 +61,7 @@ const Dashboard = () => {
  
     return (
         <div className="container mt-5">
-            <h1>Welcome Back: {name}</h1>
+            <h1>Welcome Back: {email}</h1>
             <table className="table is-striped is-fullwidth">
                 <thead>
                     <tr>
